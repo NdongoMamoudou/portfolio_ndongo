@@ -1,6 +1,6 @@
 
 import biblioImage from '../images/biblio.jpg';
-import acceuil from '../images/acceil.jpg';
+import acceuil from '../images/acceuil.PNG'
 
 const projects = [
     {
@@ -11,7 +11,7 @@ const projects = [
     },
     {
         title: "Dashboard interactif",
-        imageUrl: "biblioImage",
+        imageUrl: biblioImage,
         technologies: ['React', 'API REST', 'Docker'],
         description: "Application web moderne pour le suivi en temps réel des indicateurs clés.",
     },
