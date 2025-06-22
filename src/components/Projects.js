@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import biblioImage from '../images/biblio.jpg';
 
 const projects = [
