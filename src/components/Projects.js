@@ -1,16 +1,17 @@
 
 import biblioImage from '../images/biblio.jpg';
+import acceuil from '../images/acceil.jpg';
 
 const projects = [
     {
-        title: "Analyse des ventes",
-        imageUrl: biblioImage,
-        technologies: ['Python', 'Pandas', 'Jupyter'],
-        description: "Dashboard interactif d’analyse des données de ventes avec visualisations dynamiques.",
+        title: "GP Colis",
+        imageUrl: acceuil,
+        technologies: ['React', 'Nodejs', 'Html', 'CSS'],
+        description: "GP Colis est une application web dédiée à la gestion et à la publication d'annonces de transport de colis entre le Sénégal et la France .",
     },
     {
         title: "Dashboard interactif",
-        imageUrl: "https://via.placeholder.com/400x200",
+        imageUrl: "biblioImage",
         technologies: ['React', 'API REST', 'Docker'],
         description: "Application web moderne pour le suivi en temps réel des indicateurs clés.",
     },
