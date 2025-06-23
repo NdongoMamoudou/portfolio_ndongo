@@ -1,6 +1,7 @@
 
 import biblioImage from '../images/biblio.jpg';
 import acceuil from '../images/acceuil.PNG'
+import pokemonImage from '../images/pokemon.jpg';
 
 const projects = [
     {
@@ -9,6 +10,13 @@ const projects = [
         technologies: ['React', 'Nodejs', 'Html', 'CSS'],
         description: "GP Colis est une application web dédiée à la gestion et à la publication d'annonces de transport de colis entre le Sénégal et la France .",
     },
+    {
+        title: "Pokédex React",
+        imageUrl: pokemonImage,
+        technologies: ['React', 'JSON'],
+        description: "Pokédex interactif développé avec React, utilisant un fichier JSON local. Il permet d'afficher la liste des Pokémon, d'ajouter, rechercher et supprimer des entrées facilement.",
+    },
+
     {
         title: "Dashboard interactif",
         imageUrl: biblioImage,
