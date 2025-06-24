@@ -11,6 +11,7 @@ const projects = [
         imageUrl: acceuil,
         technologies: ['React', 'Nodejs', 'Html', 'CSS'],
         description: "GP Colis est une application web dédiée à la gestion et à la publication d'annonces de transport de colis entre le Sénégal et la France.",
+        link: "https://gpoasis.netlify.app/"
     },
     {
         title: "Pokédex React",

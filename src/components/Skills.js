@@ -7,7 +7,7 @@ const skillsData = {
         'Git', 'Docker', 'Jupyter', 'Postman',
     ],
     Frontend: ['React', 'Vue.js', 'HTML', 'CSS', 'JavaScript'],
-    Backend: ['Python', 'Django', 'Flask'],
+    Backend: ['Python', 'Django', 'Flask', 'Node.js'],
     Outils: ['Git', 'Docker', 'Jupyter', 'Postman'],
 };
 
