@@ -9,14 +9,15 @@ const projects = [
         imageUrl: acceuil,
         technologies: ['React', 'Nodejs', 'Html', 'CSS'],
         description: "GP Colis est une application web dédiée à la gestion et à la publication d'annonces de transport de colis entre le Sénégal et la France.",
-        link: "https://monumental-tartufo-01e21b.netlify.app/"
     },
     {
         title: "Pokédex React",
         imageUrl: pokemonImage,
-        technologies: ['React', 'JSON'],
+        technologies: ['React', 'JSON', 'CSS', 'JavaScript'],
         description: "Pokédex interactif développé avec React, utilisant un fichier JSON local. Il permet d'afficher la liste des Pokémon, d'ajouter, rechercher et supprimer des entrées facilement.",
+        link: "https://pokemontypes.netlify.app/"
     },
+
 
     {
         title: "Dashboard interactif",
@@ -50,9 +51,15 @@ function Projects({ zoomedIndexes, setZoomedIndexes }) {
                     <div key={index} className="project-card-vertical">
                         <div
                             className={`project-image-container-vertical ${zoomedIndexes.includes(index) ? 'zoomed' : ''}`}
-                            onClick={() => toggleZoom(index)}
+                            onClick={() => {
+                                toggleZoom(index);
+                                if (project.link) {
+                                    window.open(project.link, "_blank");
+                                }
+                            }}
                             style={{ cursor: 'pointer' }}
                         >
+
                             <img src={project.imageUrl} alt={project.title} />
                         </div>
                         <div className="project-info-vertical">
