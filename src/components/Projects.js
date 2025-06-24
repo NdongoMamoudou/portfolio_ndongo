@@ -1,6 +1,5 @@
-
 import biblioImage from '../images/biblio.jpg';
-import acceuil from '../images/acceuil.PNG'
+import acceuil from '../images/acceuil.PNG';
 import pokemonImage from '../images/pokemon.jpg';
 import olympicsImage from '../images/jo4.jpg';
 import socialImage from '../images/twwet.PNG';
@@ -19,8 +18,6 @@ const projects = [
         description: "Pokédex interactif développé avec React, utilisant un fichier JSON local. Il permet d'afficher la liste des Pokémon, d'ajouter, rechercher et supprimer des entrées facilement.",
         link: "https://pokemontypes.netlify.app/"
     },
-
-
     {
         title: "Jeux Olympiques – Analyse de données",
         imageUrl: olympicsImage,
@@ -28,19 +25,17 @@ const projects = [
         description: `Application complète d'analyse de données olympiques (1896-2022). 
         Visualisations interactives pour découvrir les tendances par sport, saison et pays.`,
         link: "https://jeuxolympics.netlify.app/",
-        NB: 'En cour de finalisation',
+        NB: 'En cours de finalisation',
     },
     {
         title: "SocialTweet – Réseau social intelligent",
         imageUrl: socialImage,
         technologies: ['React', 'Django', 'TypeScript', 'IA', 'BERT', 'Vite'],
         description: `Application de réseau social inspirée de Twitter, avec authentification, fil d'actualité, likes, réponses et favoris. 
-    Une IA basée sur un modèle Transformer (type BERT simplifié) analyse les tweets pour identifier l’émotion dominante et proposer de nouvelles suggestions adaptées à chaque utilisateur.`,
+        Une IA basée sur un modèle Transformer (type BERT simplifié) analyse les tweets pour identifier l’émotion dominante et proposer de nouvelles suggestions adaptées à chaque utilisateur.`,
         link: "https://socialtweet-ia.netlify.app/login",
         NB: "En cours de finalisation"
     },
-
-
     {
         title: "Modèle prédictif",
         imageUrl: biblioImage,
@@ -65,19 +60,34 @@ function Projects({ zoomedIndexes, setZoomedIndexes }) {
             <div className="projects-grid">
                 {projects.map((project, index) => (
                     <div key={index} className="project-card-vertical">
-                        <div
-                            className={`project-image-container-vertical ${zoomedIndexes.includes(index) ? 'zoomed' : ''}`}
-                            onClick={() => {
-                                toggleZoom(index);
-                                if (project.link) {
-                                    window.open(project.link, "_blank");
-                                }
-                            }}
-                            style={{ cursor: 'pointer' }}
-                        >
-
-                            <img src={project.imageUrl} alt={project.title} />
-                        </div>
+                        {project.link ? (
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="project-link-wrapper"
+                                style={{ textDecoration: 'none' }}
+                            >
+                                <div
+                                    className={`project-image-container-vertical ${zoomedIndexes.includes(index) ? 'zoomed' : ''}`}
+                                    onClick={(e) => {
+                                        e.preventDefault(); // Empêche le zoom de déclencher aussi l'ouverture de lien
+                                        toggleZoom(index);
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <img src={project.imageUrl} alt={project.title} />
+                                </div>
+                            </a>
+                        ) : (
+                            <div
+                                className={`project-image-container-vertical ${zoomedIndexes.includes(index) ? 'zoomed' : ''}`}
+                                onClick={() => toggleZoom(index)}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <img src={project.imageUrl} alt={project.title} />
+                            </div>
+                        )}
                         <div className="project-info-vertical">
                             <div className="project-tech">
                                 {project.technologies.map((tech, i) => (
