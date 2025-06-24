@@ -38,7 +38,15 @@ function Presentation() {
                     const contact = document.getElementById('contact');
                     if (contact) contact.scrollIntoView({ behavior: 'smooth' });
                 }}>Entrer en contact</button>
-                <button className="white-button rounded-button">Télécharger le CV</button>
+                <button
+                    className="white-button rounded-button"
+                    onClick={() => {
+                        window.open('/Mamoudou_NDONGO_CV.pdf', '_blank');
+                    }}
+                >
+                    Télécharger le CV
+                </button>
+
             </div>
         </section>
     );

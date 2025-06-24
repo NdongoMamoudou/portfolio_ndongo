@@ -57,7 +57,7 @@ const projects = [
 
     {
         title: "Deep Learning Hub – Projets avancés",
-        imageUrl: deepLearningImage,  // remplace par ton image
+        imageUrl: deepLearningImage,
         technologies: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn'],
         description: `Projets Deep Learning incluant MLP (99.8% accuracy), CNN (99.4% MNIST, 78% CIFAR-10), LSTM, DQN, PPO. Applications en classification, vision et apprentissage par renforcement.`,
         link: "https://github.com/NdongoMamoudou/DeepLearningHub/tree/main",
