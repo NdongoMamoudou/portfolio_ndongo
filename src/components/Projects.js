@@ -3,6 +3,7 @@ import biblioImage from '../images/biblio.jpg';
 import acceuil from '../images/acceuil.PNG'
 import pokemonImage from '../images/pokemon.jpg';
 import olympicsImage from '../images/jo4.jpg';
+import socialImage from '../images/twwet.PNG';
 
 const projects = [
     {
