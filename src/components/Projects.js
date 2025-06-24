@@ -2,6 +2,7 @@
 import biblioImage from '../images/biblio.jpg';
 import acceuil from '../images/acceuil.PNG'
 import pokemonImage from '../images/pokemon.jpg';
+import olympicsImage from '../images/jo4.jpg';
 
 const projects = [
     {
@@ -20,14 +21,17 @@ const projects = [
 
 
     {
-        title: "Dashboard interactif",
-        imageUrl: biblioImage,
-        technologies: ['React', 'API REST', 'Docker'],
-        description: "Application web moderne pour le suivi en temps réel des indicateurs clés.",
+        title: "Jeux Olympiques – Analyse de données",
+        imageUrl: olympicsImage, // Remplace ceci par le bon chemin ou import d’image
+        technologies: ['React', 'Flask', 'Python', 'Docker', 'MariaDB', 'Chart.js'],
+        description: `Application complète d'analyse de données olympiques (1896-2022). 
+        Visualisations interactives pour découvrir les tendances par sport, saison et pays.`,
+        link: "https://jeuxolympics.netlify.app/"
     },
+
     {
         title: "Modèle prédictif",
-        imageUrl: "https://via.placeholder.com/400x200",
+        imageUrl: biblioImage,
         technologies: ['Scikit-learn', 'Python', 'Matplotlib'],
         description: "Système de prédiction basé sur apprentissage automatique et analyse statistique.",
     },
