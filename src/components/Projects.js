@@ -22,12 +22,23 @@ const projects = [
 
     {
         title: "Jeux Olympiques – Analyse de données",
-        imageUrl: olympicsImage, // Remplace ceci par le bon chemin ou import d’image
+        imageUrl: olympicsImage,
         technologies: ['React', 'Flask', 'Python', 'Docker', 'MariaDB', 'Chart.js'],
         description: `Application complète d'analyse de données olympiques (1896-2022). 
         Visualisations interactives pour découvrir les tendances par sport, saison et pays.`,
-        link: "https://jeuxolympics.netlify.app/"
+        link: "https://jeuxolympics.netlify.app/",
+        NB: 'En cour de finalisation',
     },
+    {
+        title: "SocialTweet – Réseau social intelligent",
+        imageUrl: socialImage,
+        technologies: ['React', 'Django', 'TypeScript', 'IA', 'BERT', 'Vite'],
+        description: `Application de réseau social inspirée de Twitter, avec authentification, fil d'actualité, likes, réponses et favoris. 
+    Une IA basée sur un modèle Transformer (type BERT simplifié) analyse les tweets pour identifier l’émotion dominante et proposer de nouvelles suggestions adaptées à chaque utilisateur.`,
+        link: "https://socialtweet-ia.netlify.app/login",
+        NB: "En cours de finalisation"
+    },
+
 
     {
         title: "Modèle prédictif",
