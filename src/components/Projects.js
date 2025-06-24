@@ -1,9 +1,12 @@
 
-import biblioImage from '../images/biblio.jpg';
+// import biblioImage from '../images/biblio.jpg';
 import acceuil from '../images/acceuil.PNG'
 import pokemonImage from '../images/pokemon.jpg';
 import olympicsImage from '../images/jo4.jpg';
 import socialImage from '../images/twwet.PNG';
+import mlprojectsImage from '../images/kmeans_clusters_poissons.png';
+import deepLearningImage from '../images/mnist_accuracy.png';
+
 
 const projects = [
     {
@@ -31,6 +34,17 @@ const projects = [
         link: "https://jeuxolympics.netlify.app/",
         NB: 'En cour de finalisation',
     },
+
+    {
+        title: "ML Projects Hub – Classification & Clustering",
+        imageUrl: mlprojectsImage,
+        technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib', 'Jupyter'],
+        description: `Collection de projets Machine Learning appliqués à des cas réels : classification de la qualité du vin, clustering de données avec K-Means, et regroupement d'espèces de poissons. 
+        Plus de 8 modèles testés, dont Random Forest, SVM et Extra Trees, avec analyses détaillées et visualisations.`,
+        link: "https://github.com/NdongoMamoudou/ml-projects-hub",
+        NB: "En cours d’enrichissement"
+    },
+
     {
         title: "SocialTweet – Réseau social intelligent",
         imageUrl: socialImage,
@@ -41,13 +55,18 @@ const projects = [
         NB: "En cours de finalisation"
     },
 
-
     {
-        title: "Modèle prédictif",
-        imageUrl: biblioImage,
-        technologies: ['Scikit-learn', 'Python', 'Matplotlib'],
-        description: "Système de prédiction basé sur apprentissage automatique et analyse statistique.",
+        title: "Deep Learning Hub – Projets avancés",
+        imageUrl: deepLearningImage,  // remplace par ton image
+        technologies: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn'],
+        description: `Projets Deep Learning incluant MLP (99.8% accuracy), CNN (99.4% MNIST, 78% CIFAR-10), LSTM, DQN, PPO. Applications en classification, vision et apprentissage par renforcement.`,
+        link: "https://github.com/NdongoMamoudou/DeepLearningHub/tree/main",
+        NB: "En cours de développement"
     },
+
+
+
+
 ];
 
 function Projects({ zoomedIndexes, setZoomedIndexes }) {
