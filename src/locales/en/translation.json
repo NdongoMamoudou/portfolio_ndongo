@@ -1,0 +1,123 @@
+{
+    "navbar": {
+        "portfolio": "Portfolio",
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "footer": {
+        "copyright": "© 2025 Mamoudou NDONGO. All rights reserved."
+    },
+    "contactTitle": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "presentation": {
+        "greeting": "Hello, I am ",
+        "descriptionLine1": "Junior Full Stack Developer specialized in Data Science.",
+        "descriptionLine2": "I design modern, efficient, data-driven web applications.",
+        "descriptionLine3": "With my dual skill set in development and data analysis, I create innovative solutions that turn information into value.",
+        "ctaWork": "See my work",
+        "aboutStrong": "About",
+        "aboutMe": "me",
+        "aboutText": "Passionate about development and data science, I combine both worlds to build innovative solutions. I’m always eager to learn new technologies and improve my skills.",
+        "card1": {
+            "title": "Web Development",
+            "description": "Creating responsive websites and web apps using modern frameworks."
+        },
+        "card2": {
+            "title": "Data Science",
+            "description": "Data exploration and visualization, predictive modeling, advanced statistical analysis."
+        },
+        "ctaContact": "Get in touch",
+        "ctaDownload": "Download CV"
+    },
+    "skills": {
+        "title": "My Skills",
+        "categories": {
+            "Tous": "All",
+            "Frontend": "Frontend",
+            "Backend": "Backend",
+            "Outils": "Tools"
+        }
+    },
+    "projects": {
+        "title": "Featured Projects",
+        "subtitle": "Here are some recent projects from my training in Data Science and Analytics.",
+        "list": [
+            {
+                "title": "GP Colis",
+                "technologies": [
+                    "React",
+                    "Nodejs",
+                    "Html",
+                    "CSS"
+                ],
+                "description": "GP Colis is a web application dedicated to managing and posting parcel transport ads between Senegal and France.",
+                "link": "https://gpoasis.netlify.app/"
+            },
+            {
+                "title": "Pokédex React",
+                "technologies": [
+                    "React",
+                    "JSON",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "description": "Interactive Pokédex built with React and local JSON. Allows you to view, search, add, and delete Pokémon entries easily.",
+                "link": "https://pokemontypes.netlify.app/"
+            },
+            {
+                "title": "Olympics Data Analysis",
+                "technologies": [
+                    "React",
+                    "Flask",
+                    "Python",
+                    "Docker",
+                    "MariaDB",
+                    "Chart.js"
+                ],
+                "description": "Complete data analysis app for Olympics (1896–2022). Interactive visualizations to explore trends by sport, season, and country.",
+                "link": "https://jeuxolympics.netlify.app/"
+            },
+            {
+                "title": "ML Projects Hub – Classification & Clustering",
+                "technologies": [
+                    "Python",
+                    "Scikit-learn",
+                    "Pandas",
+                    "Matplotlib",
+                    "Jupyter"
+                ],
+                "description": "Collection of real-world ML projects: wine quality classification, K-Means clustering, fish species grouping. Over 8 models tested including Random Forest, SVM, Extra Trees with detailed analysis and visuals.",
+                "link": "https://github.com/NdongoMamoudou/ml-projects-hub"
+            },
+            {
+                "title": "SocialTweet – Smart Social Network",
+                "technologies": [
+                    "React",
+                    "Django",
+                    "TypeScript",
+                    "AI",
+                    "BERT",
+                    "Vite"
+                ],
+                "description": "Twitter-like social network with auth, feeds, likes, replies, and favorites. BERT-based AI analyzes tweets for emotion and recommends tailored suggestions.",
+                "link": "https://socialtweet-ia.netlify.app/"
+            },
+            {
+                "title": "Deep Learning Hub – Advanced Projects",
+                "technologies": [
+                    "Python",
+                    "TensorFlow",
+                    "Keras",
+                    "Scikit-learn"
+                ],
+                "description": "Deep Learning projects including MLP (99.8% accuracy), CNN (99.4% MNIST, 78% CIFAR-10), LSTM, DQN, PPO. Applications in classification, vision, and reinforcement learning.",
+                "link": "https://github.com/NdongoMamoudou/DeepLearningHub/tree/main"
+            }
+        ]
+    }
+}

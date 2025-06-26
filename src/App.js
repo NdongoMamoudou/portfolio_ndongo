@@ -7,6 +7,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';  // <-- Import du footer
 import './App.css';
 
+
+
 function App() {
   const [filter, setFilter] = useState('Tous');
   const [zoomedIndexes, setZoomedIndexes] = useState([]);

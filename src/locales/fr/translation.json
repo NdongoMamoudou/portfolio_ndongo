@@ -1,0 +1,123 @@
+{
+    "navbar": {
+        "portfolio": "Portfolio",
+        "home": "Accueil",
+        "about": "À propos",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Contact"
+    },
+    "footer": {
+        "copyright": "© 2025 Mamoudou NDONGO. Tous droits réservés."
+    },
+    "contactTitle": "Contact",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "presentation": {
+        "greeting": "Bonjour, je suis ",
+        "descriptionLine1": "Développeur Full Stack Junior spécialisé en Data Science.",
+        "descriptionLine2": "Je conçois des applications web modernes, performantes et centrées sur les données.",
+        "descriptionLine3": "Grâce à ma double compétence en développement et en analyse de données, je crée des solutions innovantes qui transforment l'information en valeur.",
+        "ctaWork": "Voir mon travail",
+        "aboutStrong": "Sur",
+        "aboutMe": "moi",
+        "aboutText": "Passionné par le développement et la data science, je combine ces deux univers pour créer des solutions innovantes. Je suis toujours curieux d'apprendre de nouvelles technologies et d'améliorer mes compétences.",
+        "card1": {
+            "title": "Développement Web",
+            "description": "Création de sites Web et d'applications Web réactifs avec des frameworks modernes."
+        },
+        "card2": {
+            "title": "Data Science",
+            "description": "Exploration et visualisation de données, création de modèles prédictifs, analyse statistique avancée."
+        },
+        "ctaContact": "Entrer en contact",
+        "ctaDownload": "Télécharger le CV"
+    },
+    "skills": {
+        "title": "Mes compétences",
+        "categories": {
+            "Tous": "Tous",
+            "Frontend": "Frontend",
+            "Backend": "Backend",
+            "Outils": "Outils"
+        }
+    },
+    "projects": {
+        "title": "Projets en vedette",
+        "subtitle": "Voici quelques projets récents issus de ma formation en Data Science et Analyse de données.",
+        "list": [
+            {
+                "title": "GP Colis",
+                "technologies": [
+                    "React",
+                    "Nodejs",
+                    "Html",
+                    "CSS"
+                ],
+                "description": "GP Colis est une application web dédiée à la gestion et à la publication d'annonces de transport de colis entre le Sénégal et la France.",
+                "link": "https://gpoasis.netlify.app/"
+            },
+            {
+                "title": "Pokédex React",
+                "technologies": [
+                    "React",
+                    "JSON",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "description": "Pokédex interactif développé avec React, utilisant un fichier JSON local. Il permet d'afficher la liste des Pokémon, d'ajouter, rechercher et supprimer des entrées facilement.",
+                "link": "https://pokemontypes.netlify.app/"
+            },
+            {
+                "title": "Jeux Olympiques – Analyse de données",
+                "technologies": [
+                    "React",
+                    "Flask",
+                    "Python",
+                    "Docker",
+                    "MariaDB",
+                    "Chart.js"
+                ],
+                "description": "Application complète d'analyse de données olympiques (1896-2022). Visualisations interactives pour découvrir les tendances par sport, saison et pays.",
+                "link": "https://jeuxolympics.netlify.app/"
+            },
+            {
+                "title": "ML Projects Hub – Classification & Clustering",
+                "technologies": [
+                    "Python",
+                    "Scikit-learn",
+                    "Pandas",
+                    "Matplotlib",
+                    "Jupyter"
+                ],
+                "description": "Collection de projets Machine Learning appliqués à des cas réels : classification de la qualité du vin, clustering de données avec K-Means, et regroupement d'espèces de poissons. Plus de 8 modèles testés, dont Random Forest, SVM et Extra Trees, avec analyses détaillées et visualisations.",
+                "link": "https://github.com/NdongoMamoudou/ml-projects-hub"
+            },
+            {
+                "title": "SocialTweet – Réseau social intelligent",
+                "technologies": [
+                    "React",
+                    "Django",
+                    "TypeScript",
+                    "IA",
+                    "BERT",
+                    "Vite"
+                ],
+                "description": "Application de réseau social inspirée de Twitter, avec authentification, fil d'actualité, likes, réponses et favoris. Une IA basée sur un modèle Transformer (type BERT simplifié) analyse les tweets pour identifier l’émotion dominante et proposer de nouvelles suggestions adaptées à chaque utilisateur.",
+                "link": "https://socialtweet-ia.netlify.app/"
+            },
+            {
+                "title": "Deep Learning Hub – Projets avancés",
+                "technologies": [
+                    "Python",
+                    "TensorFlow",
+                    "Keras",
+                    "Scikit-learn"
+                ],
+                "description": "Projets Deep Learning incluant MLP (99.8% accuracy), CNN (99.4% MNIST, 78% CIFAR-10), LSTM, DQN, PPO. Applications en classification, vision et apprentissage par renforcement.",
+                "link": "https://github.com/NdongoMamoudou/DeepLearningHub/tree/main"
+            }
+        ]
+    }
+}

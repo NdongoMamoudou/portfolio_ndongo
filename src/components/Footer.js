@@ -1,10 +1,13 @@
 import React from 'react';
 import '../Footer.css';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+    const { t } = useTranslation();
+
     return (
         <footer className="footer">
-            <p>© 2025 Mamoudou NDONGO - Tous droits réservés</p>
+            <p>{t('footer.copyright')}</p>
         </footer>
     );
 }

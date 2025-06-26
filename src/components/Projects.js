@@ -1,89 +1,41 @@
-
-// import biblioImage from '../images/biblio.jpg';
-import acceuil from '../images/acceuil.PNG'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import acceuil from '../images/acceuil.PNG';
 import pokemonImage from '../images/pokemon.jpg';
 import olympicsImage from '../images/jo4.jpg';
 import socialImage from '../images/twwet.PNG';
 import mlprojectsImage from '../images/kmeans_clusters_poissons.png';
 import deepLearningImage from '../images/mnist_accuracy.png';
 
-
-const projects = [
-    {
-        title: "GP Colis",
-        imageUrl: acceuil,
-        technologies: ['React', 'Nodejs', 'Html', 'CSS'],
-        description: "GP Colis est une application web dédiée à la gestion et à la publication d'annonces de transport de colis entre le Sénégal et la France.",
-        link: "https://gpoasis.netlify.app/"
-    },
-    {
-        title: "Pokédex React",
-        imageUrl: pokemonImage,
-        technologies: ['React', 'JSON', 'CSS', 'JavaScript'],
-        description: "Pokédex interactif développé avec React, utilisant un fichier JSON local. Il permet d'afficher la liste des Pokémon, d'ajouter, rechercher et supprimer des entrées facilement.",
-        link: "https://pokemontypes.netlify.app/"
-    },
-
-
-    {
-        title: "Jeux Olympiques – Analyse de données",
-        imageUrl: olympicsImage,
-        technologies: ['React', 'Flask', 'Python', 'Docker', 'MariaDB', 'Chart.js'],
-        description: `Application complète d'analyse de données olympiques (1896-2022). 
-        Visualisations interactives pour découvrir les tendances par sport, saison et pays.`,
-        link: "https://jeuxolympics.netlify.app/",
-        NB: 'En cour de finalisation',
-    },
-
-    {
-        title: "ML Projects Hub – Classification & Clustering",
-        imageUrl: mlprojectsImage,
-        technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib', 'Jupyter'],
-        description: `Collection de projets Machine Learning appliqués à des cas réels : classification de la qualité du vin, clustering de données avec K-Means, et regroupement d'espèces de poissons. 
-        Plus de 8 modèles testés, dont Random Forest, SVM et Extra Trees, avec analyses détaillées et visualisations.`,
-        link: "https://github.com/NdongoMamoudou/ml-projects-hub",
-        NB: "En cours d’enrichissement"
-    },
-
-    {
-        title: "SocialTweet – Réseau social intelligent",
-        imageUrl: socialImage,
-        technologies: ['React', 'Django', 'TypeScript', 'IA', 'BERT', 'Vite'],
-        description: `Application de réseau social inspirée de Twitter, avec authentification, fil d'actualité, likes, réponses et favoris. 
-        Une IA basée sur un modèle Transformer (type BERT simplifié) analyse les tweets pour identifier l’émotion dominante et proposer de nouvelles suggestions adaptées à chaque utilisateur.`,
-        link: "https://socialtweet-ia.netlify.app/",
-        NB: "En cours de finalisation"
-    },
-
-    {
-        title: "Deep Learning Hub – Projets avancés",
-        imageUrl: deepLearningImage,
-        technologies: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn'],
-        description: `Projets Deep Learning incluant MLP (99.8% accuracy), CNN (99.4% MNIST, 78% CIFAR-10), LSTM, DQN, PPO. Applications en classification, vision et apprentissage par renforcement.`,
-        link: "https://github.com/NdongoMamoudou/DeepLearningHub/tree/main",
-        NB: "En cours de développement"
-    },
-
-
-
-
-];
-
 function Projects({ zoomedIndexes, setZoomedIndexes }) {
+    const { t } = useTranslation();
+
+    // Images associées dans l’ordre des projets
+    const images = [
+        acceuil,
+        pokemonImage,
+        olympicsImage,
+        mlprojectsImage,
+        socialImage,
+        deepLearningImage
+    ];
+
+    // Fonction pour zoomer/dézoomer les images
     const toggleZoom = (index) => {
         setZoomedIndexes((prev) =>
             prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
         );
     };
 
+    // Récupération de la liste des projets depuis les fichiers de traduction
+    const translatedProjects = t('projects.list', { returnObjects: true });
+
     return (
         <section id="projects" className="projects-section">
-            <h2 className="presentation-title">Projets en vedette</h2>
-            <p className="projects-description">
-                Voici quelques projets récents issus de ma formation en Data Science et Analyse de données.
-            </p>
+            <h2 className="presentation-title">{t('projects.title')}</h2>
+            <p className="projects-description">{t('projects.subtitle')}</p>
             <div className="projects-grid">
-                {projects.map((project, index) => (
+                {translatedProjects.map((project, index) => (
                     <div key={index} className="project-card-vertical">
                         <div
                             className={`project-image-container-vertical ${zoomedIndexes.includes(index) ? 'zoomed' : ''}`}
@@ -95,8 +47,7 @@ function Projects({ zoomedIndexes, setZoomedIndexes }) {
                             }}
                             style={{ cursor: 'pointer' }}
                         >
-
-                            <img src={project.imageUrl} alt={project.title} />
+                            <img src={images[index]} alt={project.title} />
                         </div>
                         <div className="project-info-vertical">
                             <div className="project-tech">

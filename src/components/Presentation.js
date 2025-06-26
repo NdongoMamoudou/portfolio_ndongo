@@ -14,7 +14,7 @@ function Presentation() {
                 Grâce à ma double compétence en développement et en analyse de données, je crée des solutions innovantes qui transforment l'information en valeur.
             </p>
             <div className="cta-button">
-                <button className="violet-button rounded-button">Voir mon travail</button>
+                <button className="white-button rounded-button">Voir mon travail</button>
             </div>
             <h2 className="presentation-title sur-moi-title" style={{ marginTop: '50px' }}>
                 <strong style={{ color: '#000' }}>Sur</strong> <span className="violet-text">moi</span>
@@ -34,10 +34,16 @@ function Presentation() {
                 </div>
             </div>
             <div className="presentation-buttons">
-                <button className="violet-button rounded-button" onClick={() => {
-                    const contact = document.getElementById('contact');
-                    if (contact) contact.scrollIntoView({ behavior: 'smooth' });
-                }}>Entrer en contact</button>
+                <button
+                    className="white-button rounded-button"
+                    onClick={() => {
+                        const contact = document.getElementById('contact');
+                        if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                >
+                    Entrer en contact
+                </button>
+
                 <button
                     className="white-button rounded-button"
                     onClick={() => {
@@ -46,8 +52,8 @@ function Presentation() {
                 >
                     Télécharger le CV
                 </button>
-
             </div>
+
         </section>
     );
 }

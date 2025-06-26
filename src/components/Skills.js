@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const skillsData = {
     Tous: [
@@ -12,22 +13,28 @@ const skillsData = {
 };
 
 function Skills({ filter, setFilter }) {
+    const { t } = useTranslation();
+
+    const categories = ['Tous', 'Frontend', 'Backend', 'Outils'];
+
     const skillsToShow = filter === 'Tous' ? skillsData.Tous : skillsData[filter];
 
     return (
         <section id="skills" className="skills-section">
-            <h2 className="presentation-title">Mes compétences</h2>
+            <h2 className="presentation-title">{t('skills.title')}</h2>
+
             <div className="skills-filters">
-                {['Tous', 'Frontend', 'Backend', 'Outils'].map((cat) => (
+                {categories.map((cat) => (
                     <button
                         key={cat}
-                        className={`filter-button rounded-button ${filter === cat ? 'active' : ''}`}
+                        className={`filter-button ${filter === cat ? 'active' : ''}`}
                         onClick={() => setFilter(cat)}
                     >
-                        {cat}
+                        {t(`skills.categories.${cat}`)}
                     </button>
                 ))}
             </div>
+
             <div className="skills-grid">
                 {skillsToShow.map((skill) => (
                     <div key={skill} className="skill-item">{skill}</div>
