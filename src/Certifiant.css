@@ -1,0 +1,46 @@
+.certifications-section {
+    max-width: 900px;
+    margin: 80px auto 100px auto;
+    padding: 0 15px;
+    color: black;
+    text-align: left;
+}
+
+.certifications-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.certifications-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.certifications-list li {
+    margin-bottom: 15px;
+}
+
+.certifications-list a {
+    display: inline-block;
+    background-color: white;
+    color: var(--violet);
+    border: 2px solid var(--violet);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    text-align: left;
+}
+
+.certifications-list a:hover {
+    background-color: var(--violet);
+    color: white;
+    transform: scale(1.05);
+}

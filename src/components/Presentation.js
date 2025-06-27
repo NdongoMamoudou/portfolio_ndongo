@@ -47,7 +47,8 @@ function Presentation() {
                 <button
                     className="white-button rounded-button"
                     onClick={() => {
-                        window.open('/Mamoudou_NDONGO_CV.pdf', '_blank');
+                        window.open('/CV_ndongo_dataScience.pdf', '_blank');
+
                     }}
                 >
                     Télécharger le CV

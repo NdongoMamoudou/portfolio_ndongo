@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';  // <-- Import du footer
 import './App.css';
+import Certifiant from './components/Certifications';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Presentation />
         <Skills filter={filter} setFilter={setFilter} />
         <Projects zoomedIndexes={zoomedIndexes} setZoomedIndexes={setZoomedIndexes} />
+        <Certifiant />
         <Contact />
       </main>
       <Footer />  {/* <-- Footer ajouté ici */}
