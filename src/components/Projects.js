@@ -6,6 +6,7 @@ import olympicsImage from '../images/jo4.jpg';
 import socialImage from '../images/twwet.PNG';
 import mlprojectsImage from '../images/kmeans_clusters_poissons.png';
 import deepLearningImage from '../images/mnist_accuracy.png';
+import tweetimage from '../sentiment-analysis.jpg/';
 
 function Projects({ zoomedIndexes, setZoomedIndexes }) {
     const { t } = useTranslation();
@@ -17,7 +18,8 @@ function Projects({ zoomedIndexes, setZoomedIndexes }) {
         olympicsImage,
         mlprojectsImage,
         socialImage,
-        deepLearningImage
+        deepLearningImage,
+        tweetimage
     ];
 
     // Fonction pour zoomer/dézoomer les images

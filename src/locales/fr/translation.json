@@ -117,6 +117,18 @@
                 ],
                 "description": "Projets Deep Learning incluant MLP (99.8% accuracy), CNN (99.4% MNIST, 78% CIFAR-10), LSTM, DQN, PPO. Applications en classification, vision et apprentissage par renforcement.",
                 "link": "https://github.com/NdongoMamoudou/DeepLearningHub/tree/main"
+            },
+            {
+                "title": "TweetEmotionClassifier",
+                "technologies": [
+                    "Python",
+                    "TensorFlow",
+                    "Keras",
+                    "Transformers",
+                    "scikit-learn"
+                ],
+                "description": "TweetEmotionClassifier est un projet Deep Learning qui construit un modèle Transformer pour classer les émotions exprimées dans des tweets (joie, tristesse, colère et peur). Il inclut un entraînement avec TensorFlow/Keras, la tokenisation, des couches de self-attention, et une classification via softmax.",
+                "link": "https://github.com/NdongoMamoudou/TweetEmotionClassifier"
             }
         ]
     }

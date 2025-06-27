@@ -12,6 +12,8 @@ const skillsData = {
     Outils: ['Git', 'Docker', 'Jupyter', 'Postman'],
 };
 
+
+
 function Skills({ filter, setFilter }) {
     const { t } = useTranslation();
 
