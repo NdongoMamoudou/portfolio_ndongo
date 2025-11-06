@@ -66,11 +66,47 @@
 
             0%,
             100% {
-                opacity: 0.3;
+                opacity: .3
             }
 
             50% {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px)
+            }
+
+            to {
                 opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
             }
         }
 
@@ -312,6 +348,8 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s ease;
             overflow: hidden;
+            position: relative;
+            cursor: pointer;
         }
 
         .project-card.featured {
@@ -323,6 +361,54 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
             border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-link-btn {
+            background: white;
+            color: #667eea;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .project-link-btn svg {
+            width: 18px;
+            height: 18px;
         }
 
         .featured-badge {
@@ -342,9 +428,7 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
-            cursor: pointer;
             transition: transform 0.3s ease;
-            position: relative;
         }
 
         .project-card:hover .project-image {
@@ -369,7 +453,6 @@
             padding: 6px 14px;
             border-radius: 15px;
             font-size: 0.8em;
-            cursor: default;
             font-weight: 500;
         }
 
@@ -391,156 +474,13 @@
             margin-top: 15px;
             padding-top: 15px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
         }
 
         .stat {
             color: #667eea;
             font-size: 0.9em;
             font-weight: 600;
-        }
-
-        .certifications-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .certifications-list li {
-            margin-bottom: 20px;
-        }
-
-        .certifications-list a {
-            display: block;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            padding: 25px 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
-        }
-
-        .certifications-list a:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            border-color: rgba(102, 126, 234, 0.5);
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
-        }
-
-        .certifications-list a::before {
-            content: '📜 ';
-            margin-right: 10px;
-        }
-
-        .contact-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .contact-item {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
-            border-color: rgba(102, 126, 234, 0.5);
-        }
-
-        .icon-circle {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5em;
-        }
-
-        .contact-label {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .contact-value {
-            color: #ffffff;
-            font-size: 1.05em;
-            word-break: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .social-icons a {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-            font-size: 2em;
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-            border-color: rgba(102, 126, 234, 0.6);
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .experience-timeline {
@@ -627,6 +567,112 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .certifications-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .certifications-list li {
+            margin-bottom: 20px;
+        }
+
+        .certifications-list a {
+            display: block;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 25px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .certifications-list a:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.5);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+        }
+
+        .certifications-list a::before {
+            content: '📜 ';
+            margin-right: 10px;
+        }
+
+        .contact-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5em;
+        }
+
+        .contact-label {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-value {
+            color: #ffffff;
+            font-size: 1.05em;
+            word-break: break-word;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-icons a {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            border-color: rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 3em;
@@ -655,14 +701,6 @@
             .metric-number {
                 font-size: 2em;
             }
-
-            .experience-header {
-                flex-direction: column;
-            }
-
-            .experience-date {
-                align-self: flex-start;
-            }
         }
     </style>
 </head>
@@ -673,9 +711,7 @@
 
     <header>
         <div class="header-content">
-            <h1>
-                <span class="violet-text">Mamoudou</span> NDONGO
-            </h1>
+            <h1><span class="violet-text">Mamoudou</span> NDONGO</h1>
             <p class="subtitle">
                 <strong>Ingénieur Big Data, Data Science & Intelligence Artificielle</strong><br><br>
                 Je conçois et déploie des systèmes ML en production : du prototype au code scalable.
@@ -695,23 +731,22 @@
                     <div class="metric-label">Produits analysés</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-number">
-                        < 100ms</div>
-                            <div class="metric-label">Latence temps réel</div>
-                    </div>
-                </div>
-
-                <div class="cta-buttons">
-                    <button class="cta-button"
-                        onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-                        Voir mes projets
-                    </button>
-                    <button class="cta-button secondary"
-                        onclick="window.open('/CV_2025-11-04_Mamoudou_NDONGO.pdf', '_blank')">
-                        Télécharger le CV
-                    </button>
+                    <div class="metric-number">&lt; 100ms</div>
+                    <div class="metric-label">Latence temps réel</div>
                 </div>
             </div>
+
+            <div class="cta-buttons">
+                <button class="cta-button"
+                    onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                    Voir mes projets
+                </button>
+                <button class="cta-button secondary"
+                    onclick="window.open('/CV_2025-11-04_Mamoudou_NDONGO.pdf', '_blank')">
+                    Télécharger le CV
+                </button>
+            </div>
+        </div>
     </header>
 
     <div class="container">
@@ -764,51 +799,34 @@
             </div>
         </section>
 
-        <section class="section" id="experience">
-            <h2>Expérience Professionnelle</h2>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Data Engineer</h3>
-                            <p class="experience-company">April Computer Origin — Maroc</p>
-                        </div>
-                        <div class="experience-date">Juillet 2021 - Juin 2023</div>
-                    </div>
-                    <ul class="experience-details">
-                        <li>Conception d'un <strong>pipeline ETL</strong> (Python) traitant <strong>10 Go/jour</strong>
-                            → PostgreSQL & MongoDB (<strong>50K+ utilisateurs</strong>)</li>
-                        <li>Optimisation des performances SQL : <strong>-40% de temps d'exécution</strong> sur tables
-                            5M+ lignes</li>
-                        <li>Développement d'une <strong>API Flask</strong> + dashboards temps réel (Plotly) pour
-                            visualisation de données</li>
-                        <li>Mise en place de <strong>conteneurisation Docker</strong> + CI/CD basique</li>
-                    </ul>
-                    <div class="experience-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Plotly</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="section" id="projects">
             <h2>Projets Phares</h2>
             <p class="section-intro">
-                Découvrez mes réalisations techniques en Big Data, Machine Learning et IA
+                Mes 3 réalisations majeures en Big Data, Machine Learning et Intelligence Artificielle
             </p>
-            <div class="projects-grid">
+
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));">
+                <!-- Projet phare 1 -->
                 <div class="project-card featured">
                     <div class="featured-badge">⭐ PROJET PHARE</div>
-                    <div class="project-image-placeholder"
-                        style="width: 100%; height: 250px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <div style="font-size: 4em; z-index: 2;">🛒</div>
-                        <div
-                            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px);">
+                    <div class="project-image-wrapper">
+                        <img src="images/ecommerce.PNG" alt="Sentiment Analysis" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou/salesboost" target="_blank"
+                                rel="noopener noreferrer" class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="#" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
                         </div>
                     </div>
                     <div class="project-info">
@@ -820,25 +838,38 @@
                             <span class="project-tech-button">React</span>
                         </div>
                         <h3>Moteur de Recommandation E-commerce</h3>
-                        <p>
-                            Système temps réel traitant 50K produits avec latence < 100ms. Pipeline Kafka + Spark
-                                Streaming pour ingestion et traitement distribué. Modèle hybride (ALS + réseau neuronal)
-                                avec stockage MongoDB/Redis. Architecture scalable déployée avec Docker. </p>
-                                <div class="project-stats">
-                                    <span class="stat">📦 50K produits</span>
-                                    <span class="stat">⚡ < 100ms latence</span>
-                                            <span class="stat">🔄 Temps réel</span>
-                                </div>
+                        <p>Système temps réel traitant 50K produits avec latence &lt; 100ms. Pipeline Kafka + Spark
+                            Streaming pour ingestion et traitement distribué. Modèle hybride (ALS + réseau neuronal)
+                            avec stockage MongoDB/Redis. Architecture scalable déployée avec Docker.</p>
+                        <div class="project-stats">
+                            <span class="stat">📦 50K produits</span>
+                            <span class="stat">⚡ &lt; 100ms latence</span>
+                            <span class="stat">🔄 Temps réel</span>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Projet phare 2 -->
                 <div class="project-card featured">
                     <div class="featured-badge">⭐ PROJET PHARE</div>
-                    <div class="project-image-placeholder"
-                        style="width: 100%; height: 250px; background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <div style="font-size: 4em; z-index: 2;">🚗</div>
-                        <div
-                            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px);">
+                    <div class="project-image-wrapper">
+                        <img src="#" alt="Sentiment Analysis" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou" target="_blank" rel="noopener noreferrer"
+                                class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23 .653 1.653 .242 2.874 .118 3.176 .77 .84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 .43 .372 .823 1.102 .823 2.222v3.293c0 .319 .192 .694 .801 .576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="#" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
                         </div>
                     </div>
                     <div class="project-info">
@@ -849,11 +880,9 @@
                             <span class="project-tech-button">LSTM</span>
                         </div>
                         <h3>Système de Conduite Autonome par RL</h3>
-                        <p>
-                            Agent intelligent avec algorithmes PPO et DQN. Architecture Deep Learning (CNN + LSTM)
-                            avec 2,5M de paramètres. Entraînement distribué sur 8 workers avec 500K épisodes.
-                            80% de réussite sur parcours complexes, 0 collision sur 100 tests.
-                        </p>
+                        <p>Agent intelligent avec algorithmes PPO et DQN. Architecture Deep Learning (CNN + LSTM) avec
+                            2,5M de paramètres. Entraînement distribué sur 8 workers avec 500K épisodes. 80% de réussite
+                            sur parcours complexes, 0 collision sur 100 tests.</p>
                         <div class="project-stats">
                             <span class="stat">🧠 2.5M paramètres</span>
                             <span class="stat">✅ 80% réussite</span>
@@ -862,35 +891,229 @@
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <img src="images/jo4.jpg" alt="Olympics" class="project-image">
+                <!-- Projet phare 3 -->
+                <div class="project-card featured">
+                    <div class="featured-badge">⭐ PROJET PHARE</div>
+                    <div class="project-image-wrapper">
+                        <img src="#" alt="Sentiment Analysis" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou" target="_blank" rel="noopener noreferrer"
+                                class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205 .084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492 .997 .107-.775 .418-1.305 .762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311 .469-2.381 1.236-3.221-.124-.303-.535-1.524 .117-3.176 0 0 1.008-.322 3.301 1.23 .957-.266 1.983-.399 3.003-.404 1.02 .005 2.047 .138 3.006 .404 2.291-1.552 3.297-1.23 3.297-1.23 .653 1.653 .242 2.874 .118 3.176 .77 .84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 .43 .372 .823 1.102 .823 2.222 v3.293 c0 .319 .192 .694 .801 .576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="#" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Python</span>
-                            <span class="project-tech-button">Pandas</span>
-                            <span class="project-tech-button">Data Analysis</span>
+                            <span class="project-tech-button">PostgreSQL</span>
+                            <span class="project-tech-button">MongoDB</span>
+                            <span class="project-tech-button">Flask</span>
+                            <span class="project-tech-button">Docker</span>
                         </div>
-                        <h3>Analyse Jeux Olympiques</h3>
-                        <p>Analyse statistique et visualisation des données historiques des Jeux Olympiques avec
-                            exploration de tendances et insights.</p>
+                        <h3>Pipeline ETL Big Data</h3>
+                        <p>Conception d'un pipeline ETL traitant 10 Go/jour avec PostgreSQL & MongoDB pour 50K+
+                            utilisateurs. Optimisation SQL (-40% temps d'exécution sur tables 5M+ lignes). API Flask +
+                            dashboards temps réel avec Plotly. Conteneurisation Docker et CI/CD.</p>
+                        <div class="project-stats">
+                            <span class="stat">📊 10 Go/jour</span>
+                            <span class="stat">👥 50K+ users</span>
+                            <span class="stat">⚡ -40% temps SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUTRES PROJETS -->
+        <section class="section" id="other-projects">
+            <h2>Autres Projets</h2>
+            <p class="section-intro">Projets académiques et expérimentations en Data Science</p>
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+                <!-- Deep Learning Hub (NOUVELLE CARTE) -->
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/deeplearning.png" alt="Hub Deep Learning" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou/DeepLearningHub" target="_blank"
+                                rel="noopener noreferrer" class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="#" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+                        <div class="project-tech">
+                            <span class="project-tech-button">PyTorch</span>
+                            <span class="project-tech-button">TensorFlow</span>
+                            <span class="project-tech-button">CNN</span>
+                            <span class="project-tech-button">RNN/LSTM/GRU</span>
+                            <span class="project-tech-button">GAN/VAE</span>
+                            <span class="project-tech-button">RL</span>
+                            <span class="project-tech-button">Transformers</span>
+                        </div>
+
+                        <h3>Deep Learning Hub</h3>
+                        <p>
+                            Espace centralisant mes projets DL (classification, régression, vision, génération,
+                            séries temporelles, RL). Résumés courts ici — détails et notebooks sur GitHub.
+                        </p>
+
+                        <!-- Voir plus -->
+                        <p style="margin-top:10px;">
+                            <a href="javascript:void(0)" onclick="toggleMore('dl-hub')"
+                                style="color:#8b9ceb; text-decoration:underline;">Voir plus</a>
+                        </p>
+
+                        <!-- Bloc repliable -->
+                        <div id="dl-hub" style="display:none; margin-top:10px;">
+                            <ul class="experience-details" style="margin-top:0;">
+                                <li><strong>PMC</strong> — bases de la classification/régression.</li>
+                                <li><strong>CNN</strong> — vision & détection (dispo).</li>
+                                <li><strong>RL (DQN, PPO)</strong> — <em>bientôt</em>.</li>
+                                <li><strong>RNN / LSTM / GRU</strong> — séries & NLP <em>(bientôt)</em>.</li>
+                                <li><strong>GAN / VAE</strong> — génération d’images <em>(bientôt)</em>.</li>
+                                <li><strong>Transformers</strong> — attention pour séquences/vision <em>(bientôt)</em>.
+                                </li>
+                            </ul>
+                            <div class="project-stats">
+                                <span class="stat">📚 Ensemble de projets</span>
+                                <span class="stat">🧩 6+ familles DL</span>
+                                <span class="stat">🔗 Détails sur README</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN nouvelle carte -->
+
+                <!-- 1) Analyse Jeux Olympiques -->
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/jo4.jpg" alt="Olympics" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou/IPSSI_hackathon_equipe_9" target="_blank"
+                                rel="noopener noreferrer" class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="https://jeuxolympics.netlify.app/" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tech">
+                            <span class="project-tech-button">Docker</span>
+                            <span class="project-tech-button">React</span>
+                            <span class="project-tech-button">Flask</span>
+                            <span class="project-tech-button">MariaDB</span>
+                            <span class="project-tech-button">Spark</span>
+                            <span class="project-tech-button">TensorFlow</span>
+                            <span class="project-tech-button">Prédiction</span>
+                        </div>
+
+                        <h3>Analyse Jeux Olympiques — Prédiction pour Paris</h3>
+                        <p>
+                            Plateforme full-stack (React + Flask + MariaDB) pour analyser les JO et
+                            <strong>prédire les issues/quotas probables</strong> des épreuves (probabilités, classement
+                            projeté),
+                            avec entraînement TensorFlow et traitement Spark.
+                        </p>
                     </div>
                 </div>
 
+                <!-- 2) Clustering de Données Biologiques -->
                 <div class="project-card">
-                    <img src="images/kmeans_clusters_poissons.png" alt="ML Clustering" class="project-image">
+                    <div class="project-image-wrapper">
+                        <img src="images/kmeans_clusters_poissons.png" alt="ML Clustering" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou" target="_blank" rel="noopener noreferrer"
+                                class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="#" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <div class="project-tech">
-                            <span class="project-tech-button">Python</span>
                             <span class="project-tech-button">Scikit-learn</span>
                             <span class="project-tech-button">K-Means</span>
+                            <span class="project-tech-button">SVM</span>
+                            <span class="project-tech-button">Extra Trees</span>
+                            <span class="project-tech-button">LogReg</span>
+                            <span class="project-tech-button">Visualisation</span>
+                            <span class="project-tech-button">Pandas</span>
                         </div>
-                        <h3>Clustering de Données Biologiques</h3>
-                        <p>Classification non supervisée avec K-Means pour segmentation de données de poissons.</p>
+                        <h3>Ensemble de Projets Machine Learning</h3>
+                        <p>Portefeuille ML couvrant classification, régression et clustering sur des datasets réels :
+                            comparaison de modèles, visualisations (matrices de confusion, clusters, elbow), et
+                            notebooks
+                            reproductibles.</p>
                     </div>
                 </div>
 
+                <!-- 3) Reconnaissance de Chiffres MNIST -->
                 <div class="project-card">
-                    <img src="images/mnist_accuracy.png" alt="Deep Learning" class="project-image">
+                    <div class="project-image-wrapper">
+                        <img src="images/mnist_accuracy.png" alt="Deep Learning" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou" target="_blank" rel="noopener noreferrer"
+                                class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745 .083-.729 .083-.729 1.205 .084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492 .997 .107-.775 .418-1.305 .762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311 .469-2.381 1.236-3.221-.124-.303-.535-1.524 .117-3.176 0 0 1.008-.322 3.301 1.23 .957-.266 1.983-.399 3.003-.404 1.02 .005 2.047 .138 3.006 .404 2.291-1.552 3.297-1.23 3.297-1.23 .653 1.653 .242 2.874 .118 3.176 .77 .84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 .43 .372 .823 1.102 .823 2.222 v3.293 c0 .319 .192 .694 .801 .576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="#" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Python</span>
@@ -903,8 +1126,28 @@
                     </div>
                 </div>
 
+                <!-- 4) Analyse de Sentiments -->
                 <div class="project-card">
-                    <img src="images/sentiment-analysis.jpg" alt="Sentiment Analysis" class="project-image">
+                    <div class="project-image-wrapper">
+                        <img src="images/sentiment-analysis.jpg" alt="Sentiment Analysis" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/NdongoMamoudou/TweetEmotionClassifier" target="_blank"
+                                rel="noopener noreferrer" class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745 .083-.729 .083-.729 1.205 .084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492 .997 .107-.775 .418-1.305 .762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311 .469-2.381 1.236-3.221-.124-.303-.535-1.524 .117-3.176 0 0 1.008-.322 3.301 1.23 .957-.266 1.983-.399 3.003-.404 1.02 .005 2.047 .138 3.006 .404 2.291-1.552 3.297-1.23 3.297-1.23 .653 1.653 .242 2.874 .118 3.176 .77 .84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 .43 .372 .823 1.102 .823 2.222 v3.293 c0 .319 .192 .694 .801 .576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <a href="#" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Python</span>
@@ -916,6 +1159,81 @@
                         </p>
                     </div>
                 </div>
+
+
+                <!--5) PokéAPI CRUD – Pokédex React + MongoDB -->
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <!-- Mets ici le chemin de ta capture (ex: images/pokeapp.png) -->
+                        <img src="images/pokeapp.png" alt="PokéAPI CRUD - Pokédex React + MongoDB"
+                            class="project-image">
+                        <div class="project-overlay">
+                            <!-- Remplace par l'URL exacte du repo -->
+                            <a href="https://github.com/NdongoMamoudou/pokemon_project" target="_blank"
+                                rel="noopener noreferrer" class="project-link-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Voir sur GitHub
+                            </a>
+                            <!-- Remplace par une démo (Netlify/Vercel) ou README -->
+                            <a href="https://pokemontypes.netlify.app/" class="project-link-btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Voir la démo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+                        <div class="project-tech">
+                            <span class="project-tech-button">React</span>
+                            <span class="project-tech-button">Node/Express</span>
+                            <span class="project-tech-button">MongoDB</span>
+                            <span class="project-tech-button">Mongoose</span>
+                            <span class="project-tech-button">REST API</span>
+                            <span class="project-tech-button">PokéAPI</span>
+                        </div>
+
+                        <h3>PokéAPI CRUD – Pokédex React + MongoDB</h3>
+                        <p>
+                            Application Pokédex avec recherche, filtres par types, et **CRUD complet** (ajouter,
+                            modifier,
+                            supprimer) sur une base MongoDB. Intégration PokéAPI pour récupérer les infos officielles.
+                        </p>
+
+                        <div class="project-stats">
+                            <span class="stat">🔎 Recherche + filtres</span>
+                            <span class="stat">🗂️ CRUD complet</span>
+                            <span class="stat">🧩 151 Pokémon</span>
+                        </div>
+
+                        <!-- Détails repliables -->
+                        <p style="margin-top:10px;">
+                            <a href="javascript:void(0)" onclick="toggleMore('pokeapp-more')"
+                                style="color:#8b9ceb; text-decoration:underline;">Voir plus</a>
+                        </p>
+
+                        <div id="pokeapp-more" style="display:none; margin-top:10px;">
+                            <ul class="experience-details" style="margin-top:0;">
+                                <li><strong>Front (React)</strong> : recherche en live, filtres par types, ajout
+                                    aléatoire, Pokédex (liste perso), formulaire d’édition, suppression.</li>
+                                <li><strong>Back (Express)</strong> : endpoints REST pour Pokémon personnalisés
+                                    (<code>GET/POST/PUT/DELETE /api/pokemon</code>), validation Mongoose.</li>
+                                <li><strong>DB (MongoDB)</strong> : stockage des Pokémon ajoutés/modifiés par
+                                    l’utilisateur (schéma : nom, types[], stats, sprite, description).</li>
+                                <li><strong>Intégration</strong> : synchronisation avec PokéAPI pour images, stats et
+                                    types officiels.</li>
+                                <li><strong>Bonus</strong> (optionnel) : pagination, favoris, tags, import/export JSON
+                                    du Pokédex.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -973,36 +1291,17 @@
         <section class="section" id="certifications">
             <h2>Certifications</h2>
             <ul class="certifications-list">
-                <li>
-                    <a href="/mon-portfolio/Certificats/CertificatDaccomplissement_Python_La_visualisation_des_donnees.pdf"
-                        target="_blank" rel="noopener noreferrer">
-                        Certificat Python - La visualisation des données
-                    </a>
+                <li><a href="/Certificats/CertificatDaccomplissement_Python_La_visualisation_des_donnees.pdf"
+                        target="_blank" rel="noopener noreferrer">Certificat Python - La visualisation des données</a>
                 </li>
-                <li>
-                    <a href="/mon-portfolio/Certificats/CertificatDaccomplissement_Python_Lanalyse_de_donnees.pdf"
-                        target="_blank" rel="noopener noreferrer">
-                        Certificat Python - L'analyse de données
-                    </a>
-                </li>
-                <li>
-                    <a href="/mon-portfolio/Certificats/CertificatDaccomplissement_Python_Niveau_avance.pdf"
-                        target="_blank" rel="noopener noreferrer">
-                        Certificat Python - Niveau avancé
-                    </a>
-                </li>
-                <li>
-                    <a href="/mon-portfolio/Certificats/CertificatDaccomplissement_pandas _pour _la_ data_science.pdf"
-                        target="_blank" rel="noopener noreferrer">
-                        Certificat Pandas pour la data science
-                    </a>
-                </li>
-                <li>
-                    <a href="/mon-portfolio/Certificats/ScrumFundamentalsCertified-MamoudouNdongo-1050242.pdf"
-                        target="_blank" rel="noopener noreferrer">
-                        Scrum Fundamentals Certified
-                    </a>
-                </li>
+                <li><a href="/Certificats/CertificatDaccomplissement_Python_Lanalyse_de_donnees.pdf" target="_blank"
+                        rel="noopener noreferrer">Certificat Python - L'analyse de données</a></li>
+                <li><a href="/Certificats/CertificatDaccomplissement_Python_Niveau_avance.pdf" target="_blank"
+                        rel="noopener noreferrer">Certificat Python - Niveau avancé</a></li>
+                <li><a href="/Certificats/CertificatDaccomplissement_pandas_pour_la_data_science.pdf" target="_blank"
+                        rel="noopener noreferrer">Certificat Pandas pour la data science</a></li>
+                <li><a href="/Certificats/ScrumFundamentalsCertified-MamoudouNdongo-1050242.pdf" target="_blank"
+                        rel="noopener noreferrer">Scrum Fundamentals Certified</a></li>
             </ul>
         </section>
 
@@ -1022,7 +1321,7 @@
                 <div class="contact-item">
                     <div class="icon-circle">📍</div>
                     <p class="contact-label">Localisation</p>
-                    <p class="contact-value">Strasbourg, France</p>
+                    <p class="contact-value">France</p>
                 </div>
             </div>
             <div class="social-icons">
@@ -1038,7 +1337,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
                         style="width: 32px; height: 32px; color: #667eea;">
                         <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338 .726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745 .083-.729 .083-.729 1.205 .084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492 .997 .107-.775 .418-1.305 .762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311 .469-2.381 1.236-3.221-.124-.303-.535-1.524 .117-3.176 0 0 1.008-.322 3.301 1.23 .957-.266 1.983-.399 3.003-.404 1.02 .005 2.047 .138 3.006 .404 2.291-1.552 3.297-1.23 3.297-1.23 .653 1.653 .242 2.874 .118 3.176 .77 .84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 .43 .372 .823 1.102 .823 2.222 v3.293 c0 .319 .192 .694 .801 .576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                 </a>
             </div>
@@ -1046,7 +1345,6 @@
     </div>
 
     <script>
-        // Génération d'étoiles animées
         const starsContainer = document.getElementById('stars');
         for (let i = 0; i < 100; i++) {
             const star = document.createElement('div');
@@ -1057,7 +1355,6 @@
             starsContainer.appendChild(star);
         }
 
-        // Animation au scroll
         const sections = document.querySelectorAll('.section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1068,9 +1365,14 @@
             });
         }, { threshold: 0.1 });
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        sections.forEach(section => observer.observe(section));
+
+        // --- Mini JS pour le "Voir plus" du Deep Learning Hub ---
+        function toggleMore(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+        }
     </script>
 </body>
 
