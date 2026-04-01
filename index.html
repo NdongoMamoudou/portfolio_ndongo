@@ -641,7 +641,7 @@
             font-size: 1.1em;
         }
 
-        .contact-value {
+        .contact-value a {
             color: #ffffff;
             font-size: 1.05em;
             word-break: break-word;
@@ -715,20 +715,21 @@
     <div class="stars" id="stars"></div>
 
     <header>
+
         <div class="header-content">
             <h1><span class="violet-text">Mamoudou</span> NDONGO</h1>
 
             <p class="subtitle">
-                <strong>Data Engineer – Big Data & Temps Réel</strong><br><br>
+                <strong>Data Engineer – Big Data & Streaming</strong><br><br>
 
-                Je conçois et déploie des pipelines de données scalables, du traitement batch
-                au streaming temps réel. Mon expertise couvre les architectures Big Data
-                (Apache Spark, Kafka), les flux ETL et la mise en production de solutions data.<br><br>
+                Je conçois et déploie des pipelines de données robustes, du batch au temps réel.
+                J’interviens sur toute la chaîne data : ingestion, transformation, stockage et
+                orchestration.<br><br>
 
-                <strong>2 ans d’expérience</strong> en traitement distribué, pipelines temps réel
-                et architectures data performantes.<br><br>
+                Expérience concrète en architectures Big Data avec <strong>Spark, Kafka</strong> et
+                mise en production de pipelines ETL sur environnement Cloud.<br><br>
 
-                <strong>Stack :</strong> Spark • Kafka • Python • SQL • AWS • Docker<br>
+                <strong>Stack :</strong> Spark • Kafka • Python • SQL • AWS • Airflow • Docker<br>
                 <strong>Disponible immédiatement</strong>
             </p>
 
@@ -740,34 +741,36 @@
 
                 <button class="cta-button secondary"
                     onclick="window.open('CV_ndongo_dataScience/CV_Mamoudou_NDONGO_Data_Engineer.pdf', '_blank')">
-
                     Télécharger le CV
                 </button>
             </div>
+
         </div>
+
     </header>
 
     <div class="container">
+
         <section class="section" id="about">
             <h2>À propos</h2>
 
             <p class="about-content">
                 Data Engineer spécialisé en conception de pipelines de données et architectures Big Data.
-                Expérience en traitement distribué avec Apache Spark et en ingestion temps réel avec Kafka,
-                sur des cas d’usage orientés performance et scalabilité.
+                J’ai travaillé sur des projets concrets en traitement distribué avec Spark et en ingestion temps
+                réel avec Kafka, avec un objectif clair : construire des systèmes fiables, performants et scalables.
             </p>
 
             <p class="about-content">
-                Mon approche : comprendre les besoins métier, concevoir des architectures data robustes
-                et déployer des pipelines fiables et performants en production.
+                Mon approche est orientée production : comprendre le besoin métier, modéliser la donnée,
+                puis concevoir et déployer des pipelines optimisés et maintenables.
             </p>
 
             <div class="skills-grid">
 
                 <div class="skill-card">
                     <div class="skill-icon">⚡</div>
-                    <h3>Big Data & Temps Réel</h3>
-                    <p>Conception de pipelines distribués et traitement de données à grande échelle</p>
+                    <h3>Big Data & Streaming</h3>
+                    <p>Traitement de données à grande échelle et streaming en temps réel</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Apache Spark</span>
                         <span class="tech-tag">Apache Kafka</span>
@@ -779,12 +782,12 @@
                 <div class="skill-card">
                     <div class="skill-icon">🛠️</div>
                     <h3>Data Engineering</h3>
-                    <p>Développement de pipelines ETL et modélisation des données</p>
+                    <p>Conception de pipelines ETL, modélisation et orchestration</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">ETL</span>
                         <span class="tech-tag">Airflow</span>
+                        <span class="tech-tag">dbt</span>
                         <span class="tech-tag">Data Warehouse</span>
                     </div>
                 </div>
@@ -792,12 +795,11 @@
                 <div class="skill-card">
                     <div class="skill-icon">☁️</div>
                     <h3>Cloud & Déploiement</h3>
-                    <p>Mise en production de solutions data scalables</p>
+                    <p>Industrialisation et déploiement de solutions data</p>
                     <div class="tech-tags">
                         <span class="tech-tag">AWS</span>
                         <span class="tech-tag">Docker</span>
                         <span class="tech-tag">CI/CD</span>
-                        <span class="tech-tag">Databricks</span>
                     </div>
                 </div>
 
@@ -816,21 +818,20 @@
 
                 <!-- Projet phare 1 -->
                 <div class="project-card featured">
-                    <div class="featured-badge">⭐ PROJET PHARE</div>
+                    <div class="featured-badge">🔥 PROJET PRINCIPAL</div>
+
                     <div class="project-image-wrapper">
                         <img src="images/ecommerce.PNG" alt="SalesBoost - moteur de recommandation temps réel"
                             class="project-image">
+
                         <div class="project-overlay">
                             <a href="https://github.com/NdongoMamoudou/salesboost" target="_blank"
                                 rel="noopener noreferrer" class="project-link-btn">
-                                <svg fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                </svg>
                                 Voir sur GitHub
                             </a>
                         </div>
                     </div>
+
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Kafka</span>
@@ -843,32 +844,43 @@
                             <span class="project-tech-button">Data Engineering</span>
                             <span class="project-tech-button">Real-Time Processing</span>
                         </div>
+
                         <h3>Data Engineer – Système de recommandation temps réel (SalesBoost)</h3>
+
                         <p>
-                            Développement d’un système de recommandation e-commerce en temps réel basé sur une
-                            architecture Big Data complète.
-                            Ingestion des événements utilisateurs via Kafka, traitement distribué avec Spark Streaming
-                            et calcul de scores dynamiques.
-                            Stockage des résultats dans Redis et MongoDB, exposition via API FastAPI et interface React.
-                            Simulation d’activité utilisateur pour tester les performances en conditions réelles et
-                            valider la scalabilité du système.
+                            Conception d’un système de recommandation e-commerce en temps réel basé sur une architecture
+                            Big Data complète.<br><br>
+
+                            Pipeline temps réel : ingestion des événements utilisateurs avec Kafka, traitement distribué
+                            avec Spark Streaming
+                            et calcul de scores dynamiques en continu.<br><br>
+
+                            Stockage optimisé avec Redis (faible latence) et MongoDB, exposition via API FastAPI et
+                            interface React.<br><br>
+
+                            Simulation de trafic utilisateur pour tester la scalabilité et valider les performances du
+                            système en conditions réelles.
                         </p>
+
                         <div class="project-stats">
-                            <span class="stat">📦 50K produits</span>
-                            <span class="stat">⚡ &lt; 100 ms</span>
-                            <span class="stat">🚀 API FastAPI</span>
+                            <span class="stat">📦 50K+ produits</span>
+                            <span class="stat">⚡ &lt; 100 ms latence</span>
+                            <span class="stat">📊 Streaming temps réel</span>
                         </div>
                     </div>
                 </div>
+
 
 
                 <!-- Projet phare 2 -->
 
                 <div class="project-card featured">
                     <div class="featured-badge">⭐ PROJET PHARE</div>
+
                     <div class="project-image-wrapper">
                         <img src="images/airflow_resized.png" alt="Pipeline ETL et Data Warehouse"
                             class="project-image">
+
                         <div class="project-overlay">
                             <a href="https://github.com/NdongoMamoudou/etl-pipeline-data-warehouse" target="_blank"
                                 rel="noopener noreferrer" class="project-link-btn">
@@ -876,6 +888,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Python</span>
@@ -887,28 +900,41 @@
                             <span class="project-tech-button">Kaggle</span>
                             <span class="project-tech-button">Data Modeling</span>
                         </div>
-                        <h3>Data Engineer – Pipeline ETL & Data Warehouse (Airflow, dbt, PostgreSQL)</h3>
+
+                        <h3>Data Engineer – Pipeline ETL & Data Warehouse</h3>
+
                         <p>
-                            Conception d’un pipeline ETL de bout en bout pour ingérer, transformer et stocker
-                            des données e-commerce issues de Kaggle dans un Data Warehouse PostgreSQL.
-                            Orchestration automatisée avec Airflow, transformations avec dbt et modélisation
-                            des données en schéma en étoile (Star Schema) pour des usages analytiques.
-                            Conteneurisation avec Docker pour assurer la reproductibilité et le déploiement.
+                            Développement d’un pipeline ETL automatisé de bout en bout pour des données e-commerce
+                            (100k+ lignes).<br><br>
+
+                            Ingestion Python vers PostgreSQL (staging), transformations avec dbt et modélisation en
+                            schéma en étoile
+                            pour des usages analytiques.<br><br>
+
+                            Orchestration avec Airflow (DAG quotidien : extract → transform → test → load),
+                            avec optimisation SQL des requêtes (-50% de temps d’exécution).<br><br>
+
+                            Environnement conteneurisé avec Docker pour garantir reproductibilité et déploiement.
                         </p>
+
                         <div class="project-stats">
-                            <span class="stat">⚙️ Airflow orchestration</span>
-                            <span class="stat">🗄️ Star schema DWH</span>
-                            <span class="stat">🔄 Automated ETL</span>
+                            <span class="stat">📊 100K+ lignes</span>
+                            <span class="stat">⚙️ DAG automatisé</span>
+                            <span class="stat">🚀 -50% perf SQL</span>
                         </div>
                     </div>
                 </div>
 
+
+
                 <!-- Projet phare 3 -->
                 <div class="project-card featured">
                     <div class="featured-badge">⭐ PROJET PHARE</div>
+
                     <div class="project-image-wrapper">
                         <img src="images/databricks_project.png" alt="Architecture Data Lakehouse sur Databricks"
                             class="project-image">
+
                         <div class="project-overlay">
                             <a href="https://github.com/NdongoMamoudou" target="_blank" rel="noopener noreferrer"
                                 class="project-link-btn">
@@ -920,6 +946,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Databricks</span>
@@ -927,16 +954,23 @@
                             <span class="project-tech-button">Spark SQL</span>
                             <span class="project-tech-button">Delta Lake</span>
                         </div>
-                        <h3>Data Engineer – Architecture Data Lakehouse (Databricks)</h3>
+
+                        <h3>Data Engineer – Architecture Data Lakehouse</h3>
+
                         <p>
-                            Mise en place d’une architecture Data Lakehouse avec Delta Lake.
-                            Organisation des données en couches Bronze / Silver / Gold,
-                            développement de pipelines ETL avec PySpark et optimisation des traitements.
+                            Mise en place d’une architecture Data Lakehouse avec Delta Lake sur Databricks.<br><br>
+
+                            Organisation des données en couches Bronze / Silver / Gold pour structurer les flux
+                            et améliorer la qualité des données.<br><br>
+
+                            Développement de pipelines ETL avec PySpark et optimisation des traitements
+                            pour garantir performance et scalabilité.
                         </p>
+
                         <div class="project-stats">
-                            <span class="stat">🏗️ Bronze / Silver / Gold</span>
+                            <span class="stat">🏗️ Lakehouse</span>
                             <span class="stat">⚙️ PySpark</span>
-                            <span class="stat">📈 Architecture scalable</span>
+                            <span class="stat">📈 Pipeline scalable</span>
                         </div>
                     </div>
                 </div>
@@ -952,7 +986,7 @@
         <section class="section" id="other-projects">
             <h2>Autres projets</h2>
             <p class="section-intro">
-                Projets complémentaires en data, automatisation et traitement analytique
+                Projets complémentaires en data engineering, automatisation et traitement analytique
             </p>
 
             <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
@@ -980,6 +1014,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Spark</span>
@@ -989,12 +1024,18 @@
                             <span class="project-tech-button">MariaDB</span>
                             <span class="project-tech-button">Docker</span>
                         </div>
-                        <h3>Data Engineer – Plateforme d’analyse et prédiction (JO 2024)</h3>
+
+                        <h3>Plateforme d’analyse et prédiction des performances olympiques</h3>
+
                         <p>
-                            Développement d’une plateforme d’analyse et de prédiction des performances olympiques.
+                            Développement d’une plateforme d’analyse et de prédiction autour des Jeux Olympiques
+                            2024.<br><br>
+
                             Traitement distribué des données avec Apache Spark, entraînement d’un modèle de prédiction
-                            avec TensorFlow, exposition via API Flask et interface React pour la visualisation.
-                            Stockage des données dans MariaDB et déploiement avec Docker.
+                            avec TensorFlow,
+                            exposition via API Flask et visualisation avec React.<br><br>
+
+                            Stockage des données dans MariaDB et déploiement de l’application avec Docker.
                         </p>
                     </div>
                 </div>
@@ -1015,6 +1056,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Python</span>
@@ -1023,12 +1065,18 @@
                             <span class="project-tech-button">SQLite</span>
                             <span class="project-tech-button">ETL</span>
                         </div>
-                        <h3>Data Engineer – Pipeline ETL de scraping (Trustpilot)</h3>
+
+                        <h3>Pipeline ETL de scraping et structuration de données</h3>
+
                         <p>
-                            Développement d’un pipeline ETL de scraping pour collecter, nettoyer et structurer
-                            des avis clients depuis Trustpilot. Extraction des données avec Selenium,
-                            parsing via BeautifulSoup, nettoyage (suppression des doublons, formatage)
-                            et stockage dans une base SQLite pour exploitation analytique.
+                            Développement d’un pipeline ETL de scraping pour collecter, nettoyer et structurer des avis
+                            clients
+                            depuis Trustpilot.<br><br>
+
+                            Extraction des données avec Selenium, parsing via BeautifulSoup, nettoyage des données
+                            et suppression des doublons.<br><br>
+
+                            Stockage final dans SQLite pour exploitation analytique.
                         </p>
                     </div>
                 </div>
@@ -1049,6 +1097,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="project-info">
                         <div class="project-tech">
                             <span class="project-tech-button">Python</span>
@@ -1057,13 +1106,18 @@
                             <span class="project-tech-button">API</span>
                             <span class="project-tech-button">ETL</span>
                         </div>
-                        <h3>Data Engineer – Pipeline ETL API & SQL (Weather Data Pipeline)</h3>
+
+                        <h3>Pipeline ETL API & SQL</h3>
+
                         <p>
-                            Développement de pipelines ETL pour collecter et analyser des données météo via API
-                            OpenWeather.
-                            Extraction, transformation et stockage des données dans une base SQL (SQLite/MySQL).
-                            Conception d’une base relationnelle (livres, auteurs, emprunteurs) et mise en place
-                            de requêtes analytiques pour l’exploitation des données.
+                            Développement d’un pipeline ETL pour collecter et analyser des données météo via
+                            API.<br><br>
+
+                            Extraction, transformation et stockage des données dans une base SQL pour exploitation
+                            analytique.<br><br>
+
+                            Conception d’une base relationnelle et mise en place de requêtes analytiques pour structurer
+                            et exploiter les données.
                         </p>
                     </div>
                 </div>
@@ -1085,13 +1139,14 @@
                             <h3>Master Développement, Big Data & Intelligence Artificielle</h3>
                             <p class="experience-company">IPSSI – Lyon, France</p>
                         </div>
-                        <div class="experience-date">Novembre 2023 - Octobre 2025</div>
+                        <div class="experience-date">2023 – 2025</div>
                     </div>
 
                     <ul class="experience-details">
-                        <li><strong>Data Engineering</strong> : conception de pipelines ETL et traitement distribué</li>
-                        <li><strong>Big Data</strong> : Apache Spark, Hadoop, Kafka (streaming temps réel)</li>
+                        <li><strong>Data Engineering</strong> : pipelines ETL, traitement distribué</li>
+                        <li><strong>Big Data</strong> : Spark, Hadoop, Kafka (streaming)</li>
                         <li><strong>Architecture Data</strong> : Data Lake & Data Warehouse</li>
+                        <li><strong>Orchestration</strong> : Apache Airflow, automatisation</li>
                         <li><strong>Cloud</strong> : AWS (S3, EMR, Glue)</li>
                         <li><strong>DevOps</strong> : Docker, CI/CD, Git</li>
                     </ul>
@@ -1113,14 +1168,14 @@
                             <h3>Licence Sciences des Données & Développement Informatique</h3>
                             <p class="experience-company">ESTEM – Casablanca, Maroc</p>
                         </div>
-                        <div class="experience-date">Octobre 2022 - Juin 2023</div>
+                        <div class="experience-date">2022 – 2023</div>
                     </div>
 
                     <ul class="experience-details">
-                        <li><strong>Programmation</strong> : Python, Java, algorithmique</li>
+                        <li><strong>Programmation</strong> : Python, Java</li>
                         <li><strong>Bases de données</strong> : SQL, modélisation relationnelle</li>
                         <li><strong>Analyse de données</strong> : statistiques, visualisation</li>
-                        <li><strong>Développement</strong> : applications web et architecture logicielle</li>
+                        <li><strong>Développement</strong> : applications web</li>
                     </ul>
 
                     <div class="experience-tech">
@@ -1135,13 +1190,13 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <h3>Chimie – Physique – Informatique (PCI)</h3>
+                            <h3>Cycle scientifique (PCI)</h3>
                             <p class="experience-company">Université Cheikh Anta Diop – Dakar, Sénégal</p>
                         </div>
                     </div>
 
                     <ul class="experience-details">
-                        <li>Formation scientifique pluridisciplinaire : mathématiques, physique et informatique</li>
+                        <li>Formation en mathématiques, physique et informatique</li>
                     </ul>
 
                     <div class="experience-tech">
@@ -1158,40 +1213,42 @@
             <h2>Certifications</h2>
 
             <ul class="certifications-list">
+
                 <li>
                     <a href="/Certificats/CertificatDaccomplissement_Python_La_visualisation_des_donnees.pdf"
                         target="_blank" rel="noopener noreferrer">
-                        Python – Visualisation de données
+                        Python – Data Visualization (LinkedIn Learning)
                     </a>
                 </li>
 
                 <li>
                     <a href="/Certificats/CertificatDaccomplissement_Python_Lanalyse_de_donnees.pdf" target="_blank"
                         rel="noopener noreferrer">
-                        Python – Analyse de données
+                        Python – Data Analysis (LinkedIn Learning)
                     </a>
                 </li>
 
                 <li>
                     <a href="/Certificats/CertificatDaccomplissement_Python_Niveau_avance.pdf" target="_blank"
                         rel="noopener noreferrer">
-                        Python – Niveau avancé
+                        Python – Advanced (LinkedIn Learning)
                     </a>
                 </li>
 
                 <li>
                     <a href="/Certificats/CertificatDaccomplissement_pandas_pour_la_data_science.pdf" target="_blank"
                         rel="noopener noreferrer">
-                        Pandas pour la Data Science
+                        Pandas – Data Science (LinkedIn Learning)
                     </a>
                 </li>
 
                 <li>
                     <a href="/Certificats/ScrumFundamentalsCertified-MamoudouNdongo-1050242.pdf" target="_blank"
                         rel="noopener noreferrer">
-                        Scrum Fundamentals Certified
+                        Scrum Fundamentals Certified (SCRUMstudy)
                     </a>
                 </li>
+
             </ul>
         </section>
 
@@ -1204,19 +1261,23 @@
                 <div class="contact-item">
                     <div class="icon-circle">📧</div>
                     <p class="contact-label">Email</p>
-                    <p class="contact-value">mamoudoundongo78@gmail.com</p>
+                    <p class="contact-value">
+                        <a href="mailto:mamoudoundongo78@gmail.com">mamoudoundongo78@gmail.com</a>
+                    </p>
                 </div>
 
                 <div class="contact-item">
                     <div class="icon-circle">📱</div>
                     <p class="contact-label">Téléphone</p>
-                    <p class="contact-value">07 60 67 95 44</p>
+                    <p class="contact-value">
+                        <a href="tel:+33760679544">07 60 67 95 44</a>
+                    </p>
                 </div>
 
                 <div class="contact-item">
                     <div class="icon-circle">📍</div>
                     <p class="contact-label">Localisation</p>
-                    <p class="contact-value">France</p>
+                    <p class="contact-value">Lyon, France</p>
                 </div>
 
             </div>
@@ -1240,8 +1301,15 @@
                     </svg>
                 </a>
 
+                <a href="https://portfolio-ndongo.netlify.app/" target="_blank" rel="noopener noreferrer"
+                    title="Portfolio">
+                    <span style="font-size: 30px; color: #667eea;">🌐</span>
+                </a>
+
             </div>
         </section>
+
+
     </div>
 
     <script>
